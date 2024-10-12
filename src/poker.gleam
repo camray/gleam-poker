@@ -5,7 +5,7 @@ import gleam/io
 pub fn main() {
   case deck.new_deck() {
     Ok(d) -> {
-      io.debug(hand_validator.is_two_pair(d))
+      io.debug(hand_validator.is_n_pair(d, 2))
       Nil
     }
     Error(_) -> {

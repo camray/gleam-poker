@@ -8,3 +8,7 @@ pub fn new_value(val: Int) -> Result(Value, Nil) {
     False -> Error(Nil)
   }
 }
+
+pub fn to_int(val: Value) {
+  val.val
+}
