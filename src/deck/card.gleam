@@ -1,6 +1,6 @@
-import gleam/result
 import deck/suit.{type Suit}
 import deck/value.{type Value}
+import gleam/result
 
 pub opaque type Card {
   Card(suit: Suit, value: Value)

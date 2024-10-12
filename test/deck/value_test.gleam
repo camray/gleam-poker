@@ -1,5 +1,5 @@
-import gleeunit/should
 import deck/value.{new_value}
+import gleeunit/should
 
 pub fn create_value_test() {
   new_value(0)

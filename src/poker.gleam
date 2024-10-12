@@ -1,6 +1,6 @@
-import gleam/io
 import deck/deck
 import engine/hand_validator
+import gleam/io
 
 pub fn main() {
   case deck.new_deck() {
@@ -8,6 +8,8 @@ pub fn main() {
       io.debug(hand_validator.is_two_pair(d))
       Nil
     }
-    Error(_) -> {Nil}
+    Error(_) -> {
+      Nil
+    }
   }
 }
