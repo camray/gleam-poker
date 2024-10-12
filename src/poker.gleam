@@ -1,10 +1,13 @@
 import gleam/io
-import gleam/result
 import deck/deck
+import engine/hand_validator
 
 pub fn main() {
-  io.println("Hello from poker!")
-  result.map(deck.new_deck(), fn (res) {
-    io.debug(res)
-  })
+  case deck.new_deck() {
+    Ok(d) -> {
+      io.debug(hand_validator.is_two_pair(d))
+      Nil
+    }
+    Error(_) -> {Nil}
+  }
 }
