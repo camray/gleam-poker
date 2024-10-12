@@ -17,3 +17,16 @@ pub fn is_n_pair_test() {
   hand_validator.is_n_pair([club_1, spade_2, club_2], 2)
   |> should.be_true
 }
+
+pub fn get_high_card_test() {
+  let assert Ok(club_1) = card.new_card(suit.Club, 1)
+  let assert Ok(spade_2) = card.new_card(suit.Spade, 2)
+  let assert Ok(diamond_1) = card.new_card(suit.Diamond, 1)
+
+  let high_card = hand_validator.get_high_card([club_1, spade_2, diamond_1])
+  should.be_ok(high_card)
+  should.equal(high_card, card.new_card(suit.Spade, 2))
+
+  let high_card = hand_validator.get_high_card([])
+  should.be_error(high_card)
+}
