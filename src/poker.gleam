@@ -1,20 +1,10 @@
-import deck/deck
-import engine/hand_validator
-import gleam/erlang
+import engine/hold_em
 import gleam/io
 import gleam/result
 
 pub fn main() {
   io.println("Playing a game of Texas Hold 'Em Poker")
-  use game_deck <- result.map(deck.new_deck())
+  use game_state <- result.map(hold_em.init_game(2))
 
-  case erlang.get_line("Say something nice\n") {
-    Ok(res) -> {
-      io.debug(res)
-      Nil
-    }
-    Error(_) -> Nil
-  }
-
-  io.debug(game_deck)
+  io.debug(game_state)
 }
