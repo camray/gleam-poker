@@ -1,8 +1,5 @@
 import deck/deck.{type Deck}
-import engine/dealer
 import engine/player
-import gleam/int
-import gleam/list
 import gleam/result
 
 pub type GameState {
@@ -27,20 +24,3 @@ fn create_player_list(
     }
   }
 }
-/// Deal two cards to each player in turn
-// pub fn deal_hand(game_state: GameState) {
-// let cards = game_state.deck
-// todo
-// game_state.players
-// |> list.map(fn (player) {
-//   let new_cards = player.cards
-//   case dealer.deal_card(cards) {
-//     Ok(#(card, new_deck)) -> {
-//       let new_cards = [card, ..player.cards]
-
-//       Nil
-//     }
-//     Error(_) -> Nil
-//   }
-// })
-// }

@@ -1,7 +1,6 @@
 import deck/card
 import deck/deck
 import engine/player
-import gleam/result
 
 pub fn deal_card(deck: deck.Deck) -> Result(#(card.Card, deck.Deck), Nil) {
   case deck {

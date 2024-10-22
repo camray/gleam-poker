@@ -32,7 +32,8 @@ fn deal() {
 
   use game <- result.map(hold_em.init_game(player_count))
 
-  let #(players, deck) = dealer.deal_n_cards_to_players(2, game.players, game.deck)
+  let #(players, deck) =
+    dealer.deal_n_cards_to_players(2, game.players, game.deck)
 
   io.println("Players")
   io.debug(players)
