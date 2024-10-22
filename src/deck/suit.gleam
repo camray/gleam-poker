@@ -7,7 +7,7 @@ pub type Suit {
 
 pub const all_suits: List(Suit) = [Heart, Diamond, Spade, Club]
 
-pub fn suit_to_int(s: Suit) -> Int {
+pub fn to_int(s: Suit) -> Int {
   case s {
     Heart -> 0
     Diamond -> 1

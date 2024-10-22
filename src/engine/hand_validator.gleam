@@ -1,6 +1,6 @@
 import deck/card.{get_suit, get_value}
-import deck/suit.{suit_to_int}
-import deck/value.{to_int}
+import deck/suit
+import deck/value
 import gleam/list
 import gleam/order
 
@@ -19,7 +19,7 @@ pub fn get_high_card(cards: List(card.Card)) -> Result(card.Card, Nil) {
 
 pub fn sort_by_suit(cards: List(card.Card)) {
   list.sort(cards, fn(a, b) {
-    case suit_to_int(get_suit(a)) > suit_to_int(get_suit(b)) {
+    case suit.to_int(get_suit(a)) > suit.to_int(get_suit(b)) {
       True -> order.Gt
       False -> order.Lt
     }
@@ -28,7 +28,7 @@ pub fn sort_by_suit(cards: List(card.Card)) {
 
 pub fn sort_by_value(cards: List(card.Card)) {
   list.sort(cards, fn(a, b) {
-    case to_int(get_value(a)) > to_int(get_value(b)) {
+    case value.to_int(get_value(a)) > value.to_int(get_value(b)) {
       True -> order.Gt
       False -> order.Lt
     }

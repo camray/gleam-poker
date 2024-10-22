@@ -1,5 +1,5 @@
-import deck/card.{type Card}
+import deck/card
 
 pub type Player {
-  Player(name: String, cards: List(Card))
+  Player(cards: List(card.Card))
 }
